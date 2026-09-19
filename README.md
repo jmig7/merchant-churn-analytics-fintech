@@ -43,10 +43,13 @@ Em operações de credenciamento e meios de pagamento, a perda de engajamento do
 │   └── gerar_dados_churn.py       # Script Python para geração das bases
 ├── Projeto 1 - Preditivo Churn & Inatividade Transacional.pbix
 └── README.md
+```
+---
 
-📐 Métricas Desenvolvidas (DAX)
+## 📐 Métricas Desenvolvidas (DAX)
 Entre as métricas criadas para análise contínua de risco e variação transacional, destaca-se o cálculo de migração para ociosidade:
 
+```dax
 Novos ociosos = 
 VAR DataContexto = MAX(transacoes_base[data_hora])
 VAR MesAtual = MONTH(DataContexto)
@@ -85,3 +88,4 @@ COUNTROWS(
         TPV_MesAnterior > 0 && (ISBLANK(TPV_MesAtual) || TPV_MesAtual = 0)
     )
 )
+```
